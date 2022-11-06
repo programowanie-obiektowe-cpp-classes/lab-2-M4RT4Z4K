@@ -4,5 +4,8 @@
 
 class ResourceManager
 {
-    // Twoja implementacja tutaj
+    public:
+    ResourceManager(const Resource& X) {
+	}
+	double get() { return X.get; }
 };
