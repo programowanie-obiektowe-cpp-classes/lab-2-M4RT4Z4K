@@ -4,8 +4,18 @@
 
 class ResourceManager
 {
-    public:
-    ResourceManager(const Resource& X) {
+public:
+	ResourceManager() { X = new Resource(); }
+
+	ResourceManager(const ResourceManager& MX) {
+		X = new Resource();
+		*X = *MX.X;
 	}
-	double get() { return X.get; }
+
+	~ResourceManager() { delete X; }
+
+	double get() { return X->get(); }
+
+private:
+	Resource* X;
 };
